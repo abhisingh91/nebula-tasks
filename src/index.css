@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@keyframes glow-bounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    /* Move towards top-right corner of the *original* viewport */
+    transform: translate(20vw, -20vh); /* Increased range */
+  }
+  50% {
+    /* Move towards bottom-left corner */
+    transform: translate(-25vw, 25vh); /* Increased range */
+  }
+  75% {
+    /* Move towards top-left corner */
+    transform: translate(30vw, 10vh); /* Increased range */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.animate-glow-bounce {
+  animation: glow-bounce 45s ease-in-out infinite alternate; /* Increased duration, added alternate */
+}
